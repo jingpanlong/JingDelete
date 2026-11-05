@@ -71,18 +71,7 @@ Real interface captures from Jing Delete (景·除):
 
 | Startup on boot | Backup & logs |
 | --- | --- |
-| ![Startup on boot](screenshots/05-%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8.png) | ![Backup & logs](screenshots/06-%E5%A4%87%E4%BB%BD%E6%97%A5%E5%BF%97.png) |
-
-| Operation reminders |
-| --- |
-| ![Operation reminders](screenshots/07-%E6%93%8D%E4%BD%9C%E6%8F%90%E9%86%92.png) |
-
-### Cover / preview images
-
-- Square cover (900×900): ![Square cover](screenshots/00-%E6%96%B9%E5%BD%A2%E5%B0%81%E9%9D%A2-900.png)
-- Wide cover (2.35:1): ![Wide cover](screenshots/00-%E6%A8%AA%E7%89%88%E5%B0%81%E9%9D%A2-2.35%E6%AF%941.png)
-
----
+| ![Startup on boot](screenshots/05-%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8.png) | ![Backup & logs](screenshots/06-%E5%A4%87%E4%BB%BD%E6%97%A5%E5%BF%97.png) |---
 
 ## Build
 
