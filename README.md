@@ -1,181 +1,183 @@
-﻿# Jing Delete / 景·除
+# Jing Delete / 景·除
 
 ![banner](screenshots/banner.png)
 
-[![Latest release](https://img.shields.io/github/v/release/jingpanlong/JingDelete?label=latest)](https://github.com/jingpanlong/JingDelete/releases)
-[![Total downloads](https://img.shields.io/github/downloads/jingpanlong/JingDelete/total)](https://github.com/jingpanlong/JingDelete/releases)
-[![Platform](https://img.shields.io/badge/platform-Windows-blue)](https://github.com/jingpanlong/JingDelete)
+[![最新发布](https://img.shields.io/github/v/release/jingpanlong/JingDelete?label=latest)](https://github.com/jingpanlong/JingDelete/releases)
+[![总下载量](https://img.shields.io/github/downloads/jingpanlong/JingDelete/total)](https://github.com/jingpanlong/JingDelete/releases)
+[![平台](https://img.shields.io/badge/platform-Windows-blue)](https://github.com/jingpanlong/JingDelete)
 [![.NET](https://img.shields.io/badge/.NET-Framework%204.7.2%2B-512BD4)](https://docs.microsoft.com/dotnet/framework/)
-[![License](https://img.shields.io/github/license/jingpanlong/JingDelete)](LICENSE)
+[![许可证](https://img.shields.io/github/license/jingpanlong/JingDelete)](LICENSE)
 
-**Jing Delete (景·除)** is a Windows local file & software cleanup tool: file deletion, software uninstall, leftover cleanup, disk-space tidying, and startup management. Everything runs on your machine — **no networking, no telemetry**. Dangerous operations (deletion, cleanup, permission changes) always require explicit confirmation.
+**Jing Delete（景·除）** 是一款 Windows 本地文件与软件清理工具：文件删除、软件卸载、残留清理、磁盘空间整理、启动项管理。一切都在本机完成——**无网络访问、无遥测**。涉及危险操作（删除、清理、权限变更）一律需要显式确认。
 
-> Author: WeChat Official Account「景同志」, Xiaohongshu「景同学」. The app's "About" page includes the GitHub repository link and download entry.
+> 作者：微信公众号「景同志」、小红书「景同学」。软件「关于」页内置 GitHub 仓库链接与下载入口。
 
 ---
 
-## Quick Download
+## 快速下载
 
-| Version | Notes | Download |
+| 版本 | 说明 | 下载 |
 | --- | --- | --- |
-| Portable (single file) | `JingChu.exe` — extract and run; relies on the system .NET Framework | [JingChu.exe](https://github.com/jingpanlong/JingDelete/releases/latest/download/JingChu.exe) |
-| Installer | `JingChu-Setup.exe` — per-user install with Start Menu and uninstall entry | [JingChu-Setup.exe](https://github.com/jingpanlong/JingDelete/releases/latest/download/JingChu-Setup.exe) |
+| 便携版（单文件） | `JingChu.exe`——解压即用，依赖系统 .NET Framework | [JingChu.exe](https://github.com/jingpanlong/JingDelete/releases/latest/download/JingChu.exe) |
+| 安装版 | `JingChu-Setup.exe`——当前用户安装，含开始菜单与卸载入口 | [JingChu-Setup.exe](https://github.com/jingpanlong/JingDelete/releases/latest/download/JingChu-Setup.exe) |
 
-You can also browse historical versions and checksums on the [Releases](https://github.com/jingpanlong/JingDelete/releases) page.
+历史版本与校验值可在 [Releases](https://github.com/jingpanlong/JingDelete/releases) 页面查看。
 
-> The program is not code-signed, so Windows may show an "Unknown publisher" warning. This version does not request or forge a signature; to verify, compare the SHA-256 shown on the release page.
-
----
-
-## Key Features
-
-![Key Features](screenshots/features.png)
-
-1. **File operations** — drag & drop / picker / paste paths; long-path, trailing-dot/space, and Unicode name handling; pre-delete preview, lock/occupancy detection, same-volume rename & move.
-2. **Software uninstall** — reads classic desktop uninstall registry entries and launches each program's own uninstaller; Ctrl/Shift multi-select and batch queue, with a unified post-uninstall registry-candidate list.
-3. **Leftover cleanup** — keyword scan of top-level SOFTWARE subkeys, uninstall entries, and common directories' first level; results start unchecked; registry is always backed up before modification.
-4. **Disk space** — four scans: stale temp files, empty folders, large files, zero-byte files; results exportable to CSV.
-5. **Startup management** — registry Run keys and per-user/public Startup folders in one place; Startup-folder items can be disabled (with backup) and restored.
-6. **Backup & logs** — registry backups before modification, restorable and importable; daily logs, live results, and today's log exportable.
-7. **Local-first** — no networking, no telemetry; backups and logs stay on the local machine.
-8. **Open source** — source available; issues and pull requests welcome.
+> 本程序未进行代码签名，Windows 可能提示“未知发布者”。本版本不申请也不伪造签名；如需验证，请比对发布页上的 SHA-256。
 
 ---
 
-## Table of Contents
+## 核心功能
 
-- [Screenshots](#screenshots)
-- [Build](#build)
-- [Implemented Features](#implemented-features)
-- [Usage Flow](#usage-flow)
-- [Data & Requirements](#data--requirements)
-- [Capability Boundaries](#capability-boundaries)
-- [Testing](#testing)
-- [File Structure](#file-structure)
-- [Open Source & Contributing](#open-source--contributing)
-- [License](#license)
+![核心功能](screenshots/features.png)
+
+1. **文件操作**——拖拽 / 选择器 / 粘贴路径；长路径、结尾点号或空格、Unicode 文件名处理；删除前预览、占用与锁定检测、同卷重命名与移动。
+2. **软件卸载**——读取经典桌面卸载注册表项，并启动各程序自带的卸载器；Ctrl/Shift 多选与批量排队，统一给出卸载后的注册表候选清单。
+3. **残留清理**——对顶级 SOFTWARE 子键、卸载项、常见目录第一层做关键词扫描；结果默认不勾选；修改注册表前始终先备份。
+4. **磁盘空间**——四类扫描：陈旧临时文件、空文件夹、大文件、零字节文件；结果可导出 CSV。
+5. **启动项管理**——注册表 Run 键与当前用户/公共「启动」文件夹统一查看；启动文件夹项可禁用（含备份）与恢复。
+6. **备份与日志**——修改前备份注册表，可恢复、可导入；每日日志、实时结果与今日日志均可导出。
+7. **本地优先**——无网络、无遥测；备份与日志均保存在本机。
+8. **开源**——源码开放，欢迎 Issue 与 Pull Request。
 
 ---
 
-## Screenshots
+## 目录
 
-Real interface captures from Jing Delete (景·除):
+- [截图](#截图)
+- [构建](#构建)
+- [已实现功能](#已实现功能)
+- [使用流程](#使用流程)
+- [数据与要求](#数据与要求)
+- [能力边界](#能力边界)
+- [测试](#测试)
+- [文件结构](#文件结构)
+- [开源与贡献](#开源与贡献)
+- [许可证](#许可证)
 
-| File processing | Software uninstall |
+---
+
+## 截图
+
+Jing Delete（景·除）真实界面截图：
+
+| 文件处理 | 软件卸载 |
 | --- | --- |
-| ![File processing](screenshots/01-%E6%96%87%E4%BB%B6%E5%A4%84%E7%90%86.png) | ![Software uninstall](screenshots/02-%E8%BD%AF%E4%BB%B6%E5%8D%B8%E8%BD%BD.png) |
+| ![文件处理](screenshots/01-%E6%96%87%E4%BB%B6%E5%A4%84%E7%90%86.png) | ![软件卸载](screenshots/02-%E8%BD%AF%E4%BB%B6%E5%8D%B8%E8%BD%BD.png) |
 
-| Leftover check | Space cleanup |
+| 残留检查 | 空间整理 |
 | --- | --- |
-| ![Leftover check](screenshots/03-%E6%AE%8B%E7%95%99%E6%A3%80%E6%9F%A5.png) | ![Space cleanup](screenshots/04-%E7%A9%BA%E9%97%B4%E6%95%B4%E7%90%86.png) |
+| ![残留检查](screenshots/03-%E6%AE%8B%E7%95%99%E6%A3%80%E6%9F%A5.png) | ![空间整理](screenshots/04-%E7%A9%BA%E9%97%B4%E6%95%B4%E7%90%86.png) |
 
-| Startup on boot | Backup & logs |
+| 开机启动 | 备份日志 |
 | --- | --- |
-| ![Startup on boot](screenshots/05-%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8.png) | ![Backup & logs](screenshots/06-%E5%A4%87%E4%BB%BD%E6%97%A5%E5%BF%97.png) |---
+| ![开机启动](screenshots/05-%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8.png) | ![备份日志](screenshots/06-%E5%A4%87%E4%BB%BD%E6%97%A5%E5%BF%97.png) |
 
-## Build
+---
 
-Windows 10/11, .NET Framework 4.7.2 or later. No NuGet packages or .NET SDK required.
+## 构建
 
-In this directory, run Windows PowerShell:
+Windows 10/11，.NET Framework 4.7.2 或更高。无需 NuGet 包，也无需 .NET SDK。
+
+在本目录下运行 Windows PowerShell：
 
 ```powershell
 powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\build.ps1
 ```
 
-Outputs: `bin\JingChu.exe`, `bin\JingChu-Setup.exe`. Both are single-file; the portable build depends on the system .NET Framework rather than bundling the whole runtime. The installer embeds the compiled program and copies itself as the uninstaller.
+输出：`bin\JingChu.exe`、`bin\JingChu-Setup.exe`。两者均为单文件；便携版依赖系统 .NET Framework，而非内置整个运行时。安装版内嵌编译后的程序，并将自身复制为卸载程序。
 
-The build uses the C# compiler from the Windows Framework directory. When the 4.7.2 reference assemblies are present it uses Microsoft.VisualBasic from there; otherwise it falls back to the Framework directory's assembly. `app.ico` is provided with the source; `create-icon.ps1` can regenerate it.
+构建使用 Windows Framework 目录下的 C# 编译器。当 4.7.2 参考程序集存在时，使用其中的 Microsoft.VisualBasic；否则回退到 Framework 目录下的程序集。源码附带 `app.ico`；`create-icon.ps1` 可重新生成。
 
-## Implemented Features
+## 已实现功能
 
-1. Multi-file/folder drag & drop; file picker, folder picker, manual path input.
-2. Target list, checkbox handling, remove from list, per-item status feedback.
-3. File/directory/link property view; recursive file/directory counts and size.
-4. Recycle-bin deletion; permanent deletion; Unicode, long-path, trailing-dot/space name handling.
-5. Clear read-only/hidden/system attributes before deletion; admins may optionally take ownership and grant the current user permissions per object.
-6. Same-volume rename/move, without overwriting existing targets.
-7. Restart Manager occupancy detection; request graceful close; after confirmation, terminate non-system processes and verify process creation time.
-8. Admins may queue local targets (children before parents) for Windows restart-delete, without auto-reboot.
-9. Desktop-software uninstall-entry scan, name/publisher search, launch the registered uninstaller, open install directory.
-10. Keyword scan for leftover candidates: common directories' first level, SOFTWARE direct subkeys, uninstall entries.
-11. Leftovers start unchecked; confirm each before cleanup; registry is force-backed-up before modification.
-12. 32/64-bit registry-view backup & import; backup list and directory entry.
-13. Current-user / local-machine Run startup list; disable after backup, restore from backup.
-14. Daily logs, live results, logs directory, today's log export.
-15. Background execution, cancel remaining steps, admin restart, system-directory interception.
-16. Per-user install, Start Menu and optional desktop shortcut, system uninstall entry, standalone uninstaller.
-17. Eight Chinese pages, software notes, privacy notes, and author contact (including the GitHub open-source link).
+1. 多文件/文件夹拖拽；文件选择器、文件夹选择器、手动输入路径。
+2. 目标列表、复选框处理、从列表移除、逐条状态反馈。
+3. 文件/目录/链接属性查看；递归文件/目录计数与体积。
+4. 回收站删除；永久删除；Unicode、长路径、结尾点号或空格文件名处理。
+5. 删除前清除只读/隐藏/系统属性；管理员可逐对象选择性取得所有权并授予当前用户权限。
+6. 同卷重命名/移动，不覆盖已有目标。
+7. Restart Manager 占用检测；请求优雅关闭；确认后终止非系统进程并校验进程创建时间。
+8. 管理员可将本地目标（子在前、父在后）加入 Windows 重启删除队列，无需自动重启。
+9. 桌面软件卸载项扫描、名称/发布者搜索、启动注册卸载器、打开安装目录。
+10. 残留候选关键词扫描：常见目录第一层、SOFTWARE 直接子键、卸载项。
+11. 残留默认不勾选；清理前逐条确认；修改注册表前强制备份。
+12. 32/64 位注册表视图备份与导入；备份清单与目录项。
+13. 当前用户/本机 Run 启动清单；禁用前备份，可从备份恢复。
+14. 每日日志、实时结果、日志目录、今日日志导出。
+15. 后台执行、取消剩余步骤、管理员重启、系统目录拦截。
+16. 当前用户安装、开始菜单与可选桌面快捷方式、系统卸载入口、独立卸载程序。
+17. 八个中文页面、软件说明、隐私说明与作者联系（含 GitHub 开源链接）。
 
-## Usage Flow
+## 使用流程
 
-**Files**: add/drag → review & check → prefer Recycle Bin; choose permanent delete for special paths. Permanent delete and restart-delete require typing `DELETE`. Permission repair is off by default; enabling it may change original permissions and the tool does not back up the original ACL.
+**文件**：添加/拖拽 → 检查与确认 → 优先回收站；特殊路径选择永久删除。永久删除与重启删除需输入 `DELETE`。权限修复默认关闭；开启可能改变原有权限，且本工具不备份原 ACL。
 
-**Software**: refresh list → select → run uninstall → refresh after completion → enter a unique keyword to scan leftovers → review each candidate → check and clean. Deleting an uninstall entry does not uninstall the software; directories and registry keys may be shared by multiple products from the same vendor.
+**软件**：刷新列表 → 选择 → 运行卸载 → 完成后刷新 → 输入唯一关键词扫描残留 → 逐条查看候选 → 勾选并清理。删除卸载项并不会卸载软件；目录与注册表键可能被同厂商多个产品共享。
 
-**Startup**: refresh → select → disable. The backup covers the entire Run key; restoring merges all values from the backup and may re-enable other startup items.
+**启动项**：刷新 → 选择 → 禁用。备份覆盖整个 Run 键；恢复时会合并备份中的全部值，可能重新启用其它启动项。
 
-## Data & Requirements
+## 数据与要求
 
-- Backups: `%LOCALAPPDATA%\JingChu\Backups`.
-- Logs: `%LOCALAPPDATA%\JingChu\Logs`. Paths and software names may appear in logs.
-- Default install: `%LOCALAPPDATA%\Programs\JingChu`; per-user install.
-- Uninstalling Jing Delete keeps backups and logs, and does not recursively delete unknown files in the install directory.
-- Ordinary file operations need no admin; local-machine registry, permission repair, and restart-delete may require admin.
-- Admin restart discards the current list; if run as a different admin account, HKCU, the user directory, and backup location also switch to that account.
-- Running as admin, Windows may block dragging files from a non-elevated Explorer; use the Add button or paste paths.
-- The program is not code-signed; Windows may show an unknown publisher. This version does not request or forge a signature.
-- Author contact is shown by the names you provided; no unverified account links are attached.
+- 备份：`%LOCALAPPDATA%\JingChu\Backups`。
+- 日志：`%LOCALAPPDATA%\JingChu\Logs`。路径与软件名可能出现在日志中。
+- 默认安装：`%LOCALAPPDATA%\Programs\JingChu`；当前用户安装。
+- 卸载 Jing Delete 会保留备份与日志，不会递归删除安装目录下的未知文件。
+- 普通文件操作无需管理员；本机注册表、权限修复、重启删除可能需要管理员。
+- 管理员重启会丢弃当前列表；若以不同管理员账户运行，HKCU、用户目录与备份位置也会切换到该账户。
+- 以管理员运行时，Windows 可能阻止从非提权的资源管理器拖入文件；请使用「添加」按钮或粘贴路径。
+- 本程序未做代码签名，Windows 可能提示未知发布者；本版本不申请也不伪造签名。
+- 作者联系方式以你提供的名称为准；不附带任何未经验证的账号链接。
 
-## Capability Boundaries
+## 能力边界
 
-No kernel driver; does not bypass antivirus/anti-cheat self-protection; does not touch Windows internal directories, disk/share roots, user root, or the program/backup root. WindowsApps and ProgramData\Microsoft are also blocked.
+无内核驱动；不绕过杀毒/反作弊自我保护；不触碰 Windows 内部目录、磁盘/共享根、用户根、程序/备份根。WindowsApps 与 ProgramData\Microsoft 同样被屏蔽。
 
-Directory junctions and symbolic links are not recursed into; permission repair also refuses takeown on links. Race conditions where a directory is maliciously replaced mid-operation are outside this version's defensive boundary; close related software before processing.
+不递归进入目录 junctions 与符号链接；权限修复同样拒绝链接上的 takeown。若目录在操作过程中被恶意替换造成的竞态，不在本版本防御边界内；处理前请关闭相关软件。
 
-Recycle-Bin mode rejects link or long-path root targets. Whether recycling is allowed is decided by Windows; for network or special devices Windows may show extra dialogs — read carefully and cancel if needed. A failed/cancelled permanent delete or restart-delete may have already processed some children; there is no transaction rollback. A successful restart-delete schedule does not guarantee final deletion at boot, and there is no built-in undo.
+回收站模式拒绝链接或长路径根目标。是否允许回收由 Windows 决定；对于网络或特殊设备，Windows 可能弹出额外对话框——请仔细阅读，必要时取消。失败/取消的永久删除或重启删除可能已处理部分子项；无事务回滚。成功的重启删除排期不保证开机后最终删除，且无内置撤销。
 
-Software scan reads only classic desktop uninstall entries, not all Store apps. Leftovers are name-matched candidates, not a full-disk/full-registry scan and not an intelligent "useless key" judgment. Driver uninstall, browser cleanup, duplicate-file cleanup, and system repair are not implemented.
+软件扫描仅读取经典桌面卸载项，并非全部 Store 应用。残留是按名称匹配的候选，而非全盘/全注册表扫描，也不是智能“无用项”判断。驱动卸载、浏览器清理、重复文件清理、系统修复均未实现。
 
-Occupancy detection is limited by Restart Manager capability and system policy. No detected process on a file/directory does not mean it is unoccupied. For system safety, terminating programs inside Windows directories, system sessions, and this program itself is forbidden.
+占用检测受 Restart Manager 能力与系统策略限制。文件/目录上未检测到进程，不代表其未被占用。出于系统安全，禁止终止 Windows 目录内、系统会话内以及本程序自身的进程。
 
-## Testing
+## 测试
 
 ```powershell
 powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\test.ps1 -TestRoot D:\some-workspace\new-test-directory
 ```
 
-The test root must not exist yet. The test program creates only dedicated temp files, a dedicated HKCU test key, a test uninstall entry, and a test shortcut — it does not touch real software; the registry test key is cleaned in `finally`. Test files and backups remain in the specified directory for inspection. Restart Manager and registry export need access to the relevant Windows services/registry; a restricted sandbox may deny them.
+测试根目录必须尚不存在。测试程序仅创建专用临时文件、专用 HKCU 测试键、测试卸载项与测试快捷方式——不触碰真实软件；注册表测试键在 `finally` 中清理。测试文件与备份保留在指定目录供检查。Restart Manager 与注册表导出需要访问相关 Windows 服务/注册表；受限沙箱可能拒绝。
 
-123 automated checks currently pass, plus new button-background pixel, icon extraction, search, and refresh checks, and the original regression covering path protection, Unicode/read-only, long paths and anomalous names, link-target preservation, cancel, move-without-overwrite, locked-file errors and release, occupancy identification, registry backup/delete/restore, architecture views, simulated uninstaller invocation, installer unpack/shortcut/registration, self-delete after uninstall and exit, preserving unknown files, install UI and eight-page rendering. Full end-to-end testing of real third-party uninstalls, UAC, admin ACL repair, real restart-delete, and interactive Recycle Bin is not yet done.
+目前 123 项自动化检查通过，外加新增的按钮背景像素、图标提取、搜索与刷新检查，以及原来的回归覆盖：路径保护、Unicode/只读、长路径与异常名、链接目标保留、取消、移动不覆盖、锁定文件报错与释放、占用识别、注册表备份/删除/恢复、架构视图、模拟卸载器调用、安装包解包/快捷方式/注册、卸载后自删与退出、保留未知文件、安装 UI 与八页面渲染。真实第三方卸载、UAC、管理员 ACL 修复、真实重启删除与交互式回收站的完整端到端测试尚未完成。
 
-## File Structure
+## 文件结构
 
-- `Core.cs`: Windows native APIs, file handling, registry & software management.
-- `Extras.cs`: space scanning, candidate review/delete, Startup-folder backup/restore, CSV & preview.
-- `App.cs`: Chinese WinForms main UI.
-- `Screens.cs`: home, space tidying, startup management, author page, preview window.
-- `Design.cs`: unified colors, rounded cards, buttons, graphic navigation, list styles.
-- `SoftwareIcons.cs`: software icon path resolution, resource extraction, missing fallback.
-- `Setup.cs`: installer & uninstaller.
-- `Tests.cs`: isolated functional tests and page rendering.
-- `build.ps1` / `test.ps1`: offline build & test scripts.
-- `app.manifest` / `AssemblyInfo.cs` / `app.ico`: program metadata.
-- `Brand.png` / `BRAND.md`: transparent logo and image-generation prompts/asset notes.
-- `screenshots/`: README imagery (banner and feature graphic).
+- `Core.cs`：Windows 原生 API、文件处理、注册表与软件管理。
+- `Extras.cs`：空间扫描、候选审查/删除、启动文件夹备份/恢复、CSV 与预览。
+- `App.cs`：中文 WinForms 主界面。
+- `Screens.cs`：首页、空间整理、启动项管理、作者页、预览窗口。
+- `Design.cs`：统一配色、圆角卡片、按钮、图形导航、列表样式。
+- `SoftwareIcons.cs`：软件图标路径解析、资源提取、缺失回退。
+- `Setup.cs`：安装与卸载程序。
+- `Tests.cs`：隔离功能测试与页面渲染。
+- `build.ps1` / `test.ps1`：离线构建与测试脚本。
+- `app.manifest` / `AssemblyInfo.cs` / `app.ico`：程序元数据。
+- `Brand.png` / `BRAND.md`：透明 Logo 与图像生成提示/素材说明。
+- `screenshots/`：README 配图（横幅与功能图）。
 
-The `AppDomain` test-data slot in source is set only by the test entry point; the normal program has no corresponding command-line or environment entry.
+源代码中 `AppDomain` 测试数据槽仅由测试入口设置；正常运行程序无对应命令行或环境变量入口。
 
-## Open Source & Contributing
+## 开源与贡献
 
-This repository is the open-source home of **Jing Delete (景·除)**:
+本仓库是 **Jing Delete（景·除）** 的开源主页：
 
-- Repository: <https://github.com/jingpanlong/JingDelete>
-- Issues & suggestions: <https://github.com/jingpanlong/JingDelete/issues>
-- Releases & downloads: <https://github.com/jingpanlong/JingDelete/releases>
+- 仓库：<https://github.com/jingpanlong/JingDelete>
+- Issue 与建议：<https://github.com/jingpanlong/JingDelete/issues>
+- 发布与下载：<https://github.com/jingpanlong/JingDelete/releases>
 
-Pull requests are welcome. Please run `test.ps1` (see Testing above) and confirm the regression passes before submitting.
+欢迎 Pull Request。提交前请运行 `test.ps1`（见上文测试）并确认回归通过。
 
-## License
+## 许可证
 
-Released under the [MIT License](LICENSE). The logo and brand visuals (including `Brand.png`, `app.ico`) are licensed the same way, but no trademark search or registration has been performed for this version.
+基于 [MIT 许可证](LICENSE) 发布。Logo 与品牌视觉（含 `Brand.png`、`app.ico`）以相同方式授权，但本版本未做任何商标检索或注册。
