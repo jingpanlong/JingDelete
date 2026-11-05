@@ -44,6 +44,7 @@ You can also browse historical versions and checksums on the [Releases](https://
 
 ## Table of Contents
 
+- [Screenshots](#screenshots)
 - [Build](#build)
 - [Implemented Features](#implemented-features)
 - [Usage Flow](#usage-flow)
@@ -53,6 +54,33 @@ You can also browse historical versions and checksums on the [Releases](https://
 - [File Structure](#file-structure)
 - [Open Source & Contributing](#open-source--contributing)
 - [License](#license)
+
+---
+
+## Screenshots
+
+Real interface captures from Jing Delete (景·除):
+
+| File processing | Software uninstall |
+| --- | --- |
+| ![File processing](screenshots/01-%E6%96%87%E4%BB%B6%E5%A4%84%E7%90%86.png) | ![Software uninstall](screenshots/02-%E8%BD%AF%E4%BB%B6%E5%8D%B8%E8%BD%BD.png) |
+
+| Leftover check | Space cleanup |
+| --- | --- |
+| ![Leftover check](screenshots/03-%E6%AE%8B%E7%95%99%E6%A3%80%E6%9F%A5.png) | ![Space cleanup](screenshots/04-%E7%A9%BA%E9%97%B4%E6%95%B4%E7%90%86.png) |
+
+| Startup on boot | Backup & logs |
+| --- | --- |
+| ![Startup on boot](screenshots/05-%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8.png) | ![Backup & logs](screenshots/06-%E5%A4%87%E4%BB%BD%E6%97%A5%E5%BF%97.png) |
+
+| Operation reminders |
+| --- |
+| ![Operation reminders](screenshots/07-%E6%93%8D%E4%BD%9C%E6%8F%90%E9%86%92.png) |
+
+### Cover / preview images
+
+- Square cover (900×900): ![Square cover](screenshots/00-%E6%96%B9%E5%BD%A2%E5%B0%81%E9%9D%A2-900.png)
+- Wide cover (2.35:1): ![Wide cover](screenshots/00-%E6%A8%AA%E7%89%88%E5%B0%81%E9%9D%A2-2.35%E6%AF%941.png)
 
 ---
 
